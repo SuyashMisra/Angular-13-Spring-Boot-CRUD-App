@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Update Employee</h2>
+    <form (ngSubmit)="onSubmit()">
+    
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput [(ngModel)]="employee.firstName" name="firstName" required>
+                <!-- <mat-error *ngIf="employee.emailId.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput [(ngModel)]="employee.lastName" name="lastName" required>
+                <!-- <mat-error *ngIf="employee.emailId.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+        </div>
+    
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Email Id</mat-label>
+                <input type="email" matInput [(ngModel)]="employee.emailId" name="email" required>
+                <!-- <mat-error *ngIf="employee.emailId.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button [disabled]="!isFormValid()" color="primary" type="submit">Submit</button>
+    </form>
+</div>

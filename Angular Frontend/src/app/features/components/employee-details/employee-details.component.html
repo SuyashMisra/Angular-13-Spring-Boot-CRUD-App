@@ -1,0 +1,34 @@
+<div class="container">
+    <button mat-raised-button color="primary" [routerLink]="['/employees']" style="margin-bottom: 10px;">
+        <mat-icon>arrow_back</mat-icon> <span class="nav-caption">Back to Employee List</span>
+    </button>
+
+    <h2>Employee Details</h2>
+    
+    <div class="example-container mat-elevation-z8">
+        <div class="example-loading-shade"
+             *ngIf="isLoadingResults">
+          <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+        </div>
+
+    <div class="example-table-container">
+        
+        <table *ngIf="!isLoadingResults" mat-table [dataSource]="data" class="example-table">
+
+        <!-- Key Column -->
+        <ng-container matColumnDef="key">
+            <td style="font-weight: bold;" mat-cell *matCellDef="let row">{{row.key}}</td>
+        </ng-container>
+        
+
+        <!-- Value Column -->
+        <ng-container matColumnDef="value">
+            <td mat-cell *matCellDef="let row">{{row.value}}</td>
+        </ng-container>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    </div>
+</div>
