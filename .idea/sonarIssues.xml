@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/__SquaretestTempFile.java.ft">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/EmployeeService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/controller/EmployeeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/controller/EmployeesController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/model/Employee.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/service/EmployeeService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/java/com/demoapp/springboot/service/EmployeeServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/test/java/com/demoapp/springboot/controller/EmployeeControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/test/java/com/demoapp/springboot/controller/EmployeesControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/test/java/com/demoapp/springboot/exception/ResourceNotFoundExceptionTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/springboot-backend/src/test/java/com/demoapp/springboot/model/EmployeeTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
