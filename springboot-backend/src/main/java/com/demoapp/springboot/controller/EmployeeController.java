@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.demoapp.springboot.exception.ResourceNotFoundException;
 import com.demoapp.springboot.model.Employee;
 import com.demoapp.springboot.repository.EmployeeRepository;
+import com.demoapp.springboot.service.EmployeeServiceImpl;
 
 @CrossOrigin("*")
 @RestController
@@ -24,50 +25,43 @@ import com.demoapp.springboot.repository.EmployeeRepository;
 public class EmployeeController {
 	
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private EmployeeServiceImpl employeeService;
 
 	
 	//get all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
-		return employeeRepository.findAll();
+		return employeeService.getAllEmployees();
 	}
 	
 	
 	//create employee
 	@PostMapping("/employees")
 	public Employee createEmployee(@RequestBody Employee employee) {
-		return employeeRepository.save(employee);
+		return employeeService.createEmployee(employee);
 	}
 	
 	
 	//get employee by id
 	@GetMapping("/employees/{id}")
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
-		Employee employee = employeeRepository.findById(id)
-				.orElseThrow(()-> new ResourceNotFoundException("Employee does not exist with id: " + id));
+		Employee employee = employeeService.getEmployeeById(id);
 		return ResponseEntity.ok(employee);
 	}
 	
 	//update employee
 	@PutMapping("/employees/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employee){
-		Employee emp = employeeRepository.findById(id)
-				.orElseThrow(()-> new ResourceNotFoundException("Employee does not exist with id: " + id));
-		emp.setFirstName(employee.getFirstName());
-		emp.setLastName(employee.getLastName());
-		emp.setEmailId(employee.getEmailId());
+		Employee emp = employeeService.updateEmployee(id, employee);
 		
-		return ResponseEntity.ok(employeeRepository.save(emp));
+		return ResponseEntity.ok(emp);
 	}
 	
 	//delete employee
 	@DeleteMapping("/employees/{id}")
 	public ResponseEntity<Boolean> deleteEmployee(@PathVariable Long id){
-		Employee emp = employeeRepository.findById(id)
-				.orElseThrow(()-> new ResourceNotFoundException("Employee does not exist with id: " + id));
-		this.employeeRepository.delete(emp);
-		return ResponseEntity.ok(true);
+		boolean deleted = employeeService.deleteEmployee(id);
+		return ResponseEntity.ok(deleted);
 	}
 	
 }
