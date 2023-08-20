@@ -4,21 +4,24 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.demoapp.springboot.exception.ResourceNotFoundException;
 import com.demoapp.springboot.model.Employee;
 import com.demoapp.springboot.repository.EmployeeRepository;
 
-@Component
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
+	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
+
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
 		return employeeRepository.findAll();
 	}
 
@@ -39,8 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		emp.setEmailId(employee.getEmailId());
 		emp.setFirstName(employee.getFirstName());
 		emp.setLastName(employee.getLastName());
-		employeeRepository.save(emp);
-		return null;
+		return employeeRepository.save(emp);
 	}
 
 	@Override

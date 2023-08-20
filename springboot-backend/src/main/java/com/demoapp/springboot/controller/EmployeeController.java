@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demoapp.springboot.exception.ResourceNotFoundException;
 import com.demoapp.springboot.model.Employee;
-import com.demoapp.springboot.repository.EmployeeRepository;
-import com.demoapp.springboot.service.EmployeeServiceImpl;
+import com.demoapp.springboot.service.EmployeeService;
 
 @CrossOrigin("*")
 @RestController
@@ -25,7 +23,7 @@ import com.demoapp.springboot.service.EmployeeServiceImpl;
 public class EmployeeController {
 	
 	@Autowired
-	private EmployeeServiceImpl employeeService;
+	private EmployeeService employeeService;
 
 	
 	//get all employees
